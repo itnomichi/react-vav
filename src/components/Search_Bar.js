@@ -14,13 +14,18 @@ class SearchBar extends Component {
             <div className={styles.search_bar}>
                 <div className={styles.search_bar_input + " " + "ui icon input"}>
                     <input type="text"
-                           onChange={event => this.setState({term: event.target.value})}
+                           onChange={event => this.onInputChange(event.target.value)}
                            placeholder="Search....."
                     />
                     <i className="inverted circular search link icon"></i>
                 </div>
             </div>
         )
+    }
+
+    onInputChange(term) {
+        this.setState({term});
+        this.props.onSearchTermChange(this.state.term);
     }
 };
 
