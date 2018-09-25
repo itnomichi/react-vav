@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import styles from '../../style/style.css';
 
 class SearchBar extends Component {
 
@@ -10,11 +11,11 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div>
-                <div className="ui icon input">
+            <div className={styles.search_bar}>
+                <div className={styles.search_bar_input + " " + "ui icon input"}>
                     <input type="text"
                            onChange={event => this.setState({term: event.target.value})}
-                           placeholder="Search..."
+                           placeholder="Search....."
                     />
                     <i className="inverted circular search link icon"></i>
                 </div>
